@@ -1,6 +1,4 @@
-import './index.less';
-
-function Homepage(): JSX.Element {
+function Demo(): JSX.Element {
   return (
     <div className='font-es'>
       <div className='home-title font-es pt-12 mb-4 flex justify-center'>
@@ -18,4 +16,4 @@ function Homepage(): JSX.Element {
   );
 }
 
-export default Homepage;
+export default Demo;
