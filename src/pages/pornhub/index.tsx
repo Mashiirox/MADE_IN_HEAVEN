@@ -20,29 +20,31 @@ function PornHub(): JSX.Element {
         <span className='ph-logo bg-black text-white'>Make</span>
         <span className='ph-logo ph-logo-logo text-black'>Logo</span>
       </div>
-      <div>
-        <div className='ph-preview' id='preview'>
-          <span
-            contentEditable
-            suppressContentEditableWarning
-            spellCheck={false}
-            className='ph-preview-content ph-preview-porn'
-            style={{ fontSize, color: pornTextColor }}
-          >
-            edit&nbsp;
-          </span>
-          <span
-            contentEditable
-            suppressContentEditableWarning
-            spellCheck={false}
-            className='ph-preview-content ph-preview-hub'
-            style={{ fontSize, color: hubTextColor, backgroundColor: hubBackgroundColor }}
-          >
-            this
-          </span>
+      <div className='ph-preview'>
+        <div className='ph-preview-box'>
+          <div className='ph-view' id='preview'>
+            <span
+              contentEditable
+              suppressContentEditableWarning
+              spellCheck={false}
+              className='ph-preview-content ph-preview-porn'
+              style={{ fontSize, color: pornTextColor }}
+            >
+              edit&nbsp;
+            </span>
+            <span
+              contentEditable
+              suppressContentEditableWarning
+              spellCheck={false}
+              className='ph-preview-content ph-preview-hub'
+              style={{ fontSize, color: hubTextColor, backgroundColor: hubBackgroundColor }}
+            >
+              this
+            </span>
+          </div>
         </div>
-        <Setting onChange={(value): void => setSetting(value)} />
       </div>
+      <Setting onChange={(value): void => setSetting(value)} />
     </div>
   );
 }

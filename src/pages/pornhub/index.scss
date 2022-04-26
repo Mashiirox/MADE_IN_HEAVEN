@@ -17,8 +17,14 @@
   }
 
   &-preview {
-    @apply flex justify-center;
-    padding: 40px 20px;
+    @apply flex justify-center items-center flex-col;
+    padding: 20px 20%;
+
+    &-box {
+      padding: 20px 40px;
+      border: 1px solid #333;
+      border-radius: 10px;
+    }
 
     &-content {
       @apply font-bold text-center;
@@ -39,8 +45,12 @@
     }
   }
 
+  &-view {
+    padding: 20px 10px;
+  }
+
   &-setting {
-    @apply flex flex-wrap mt-24;
+    @apply flex flex-wrap justify-center mt-24;
     width: 440px;
 
     &-content {
