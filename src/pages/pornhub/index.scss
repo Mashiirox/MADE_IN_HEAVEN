@@ -1,0 +1,51 @@
+.ph {
+  &-page {
+    @apply bg-black w-full;
+    height: 100%;
+    min-width: 800px;
+    color: #ff9900;
+  }
+
+  &-logo {
+    @apply text-4xl rounded-md font-bold text-center p-1;
+
+    &-logo {
+      @apply px-2;
+
+      background-color: rgb(255, 153, 0);
+    }
+  }
+
+  &-preview {
+    @apply flex justify-center;
+    padding: 40px 20px;
+
+    &-content {
+      @apply font-bold text-center;
+      padding: 5px;
+      font-size: 72px;
+      border-radius: 7px;
+    }
+
+    &-porn {
+      @apply bg-black;
+      margin-right: 3px;
+    }
+
+    &-hub {
+      background-color: #ff9900;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &-setting {
+    @apply flex flex-wrap mt-24;
+    width: 440px;
+
+    &-content {
+      @apply flex justify-center items-center;
+      padding: 12px;
+    }
+  }
+}

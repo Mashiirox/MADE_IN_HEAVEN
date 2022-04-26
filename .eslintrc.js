@@ -1,11 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: [
-    'alloy',
-    'alloy/react',
-    'alloy/typescript',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['alloy', 'alloy/react', 'alloy/typescript', 'plugin:prettier/recommended'],
   plugins: ['react', '@typescript-eslint', 'prettier'],
   env: {
     // 你的环境变量（包含多个预定义的全局变量）
@@ -49,6 +44,7 @@ module.exports = {
     'no-console': 1,
     'no-nested-ternary': 1,
     'prefer-const': 2,
+    'radix': [2, 'as-needed'],
   },
   overrides: [{ files: ['**/*.ts', '**/*.tsx'], rules: { 'no-undef': 'off' } }],
   parserOptions: {

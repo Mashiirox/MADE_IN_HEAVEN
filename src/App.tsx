@@ -1,9 +1,7 @@
-import Demo from './Demo';
-
-import './App.css';
+import Routes from './routes';
 
 function App(): JSX.Element {
-  return <Demo />;
+  return <Routes />;
 }
 
 export default App;
