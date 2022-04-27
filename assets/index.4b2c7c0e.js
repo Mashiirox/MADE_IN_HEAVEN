@@ -1,4 +1,4 @@
-import{r as DA,j as N,a as wA}from"./index.e744ec49.js";/*!
+import{r as DA,j as N,a as wA}from"./index.134b6984.js";/*!
  * html2canvas 1.4.1 <https://html2canvas.hertzen.com>
  * Copyright (c) 2022 Niklas von Hertzen <https://hertzen.com>
  * Released under MIT License
