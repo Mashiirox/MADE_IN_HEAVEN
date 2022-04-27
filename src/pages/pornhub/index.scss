@@ -10,18 +10,18 @@
     @apply text-4xl rounded-md font-bold text-center p-1;
 
     &-logo {
-      @apply px-2;
+      @apply px-2 text-black;
 
       background-color: rgb(255, 153, 0);
     }
   }
 
   &-preview {
-    @apply flex justify-center items-center flex-col;
+    @apply flex justify-center items-center;
     padding: 20px 20%;
 
     &-box {
-      padding: 20px 40px;
+      padding: 20px 30px;
       border: 1px solid #333;
       border-radius: 10px;
     }
@@ -29,7 +29,6 @@
     &-content {
       @apply font-bold text-center;
       padding: 5px;
-      font-size: 72px;
       border-radius: 7px;
     }
 
@@ -39,14 +38,14 @@
     }
 
     &-hub {
-      background-color: #ff9900;
       padding-left: 10px;
       padding-right: 10px;
     }
   }
 
   &-view {
-    padding: 20px 10px;
+    @apply bg-black;
+    padding: 20px;
   }
 
   &-setting {
@@ -57,5 +56,10 @@
       @apply flex justify-center items-center;
       padding: 12px;
     }
+  }
+
+  &-export {
+    @apply text-black text-center cursor-pointer rounded-md w-24 py-2;
+    background: #ff9900;
   }
 }
