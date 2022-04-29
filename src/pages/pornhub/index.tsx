@@ -67,7 +67,7 @@ function PornHub(): JSX.Element {
         </div>
       </div>
       <Setting onChange={(value): void => setSetting(value)} />
-      <div className='flex justify-center mt-20'>
+      <div className='flex justify-center mt-20 pb-20'>
         <div className='ph-export' onClick={handleExport}>
           export
         </div>
