@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import html2canvas from 'html2canvas';
+import dom2image from 'dom-to-image';
 
 import Setting from './setting';
 
@@ -19,18 +19,20 @@ function PornHub(): JSX.Element {
   const { fontSize, hubBackgroundColor, pornTextColor, hubTextColor } = setting;
 
   const handleExport = (): void => {
-    html2canvas(previewRef.current!, {
-      allowTaint: false,
-      useCORS: true,
-      scrollY: 0,
-    }).then((canvas) => {
-      const dataImg = new Image();
-      dataImg.src = canvas.toDataURL('img/png');
-      const alink = document.createElement('a');
-      alink.href = dataImg.src;
-      alink.download = 'logo.png';
-      alink.click();
-    });
+    dom2image
+      .toPng(previewRef.current!)
+      .then((dataUrl: string) => {
+        const dataImg = new Image();
+        dataImg.src = dataUrl;
+        const alink = document.createElement('a');
+        alink.href = dataImg.src;
+        alink.download = 'logo.png';
+        alink.click();
+      })
+      .catch((error: Error) => {
+        alert('好像出错了...');
+        throw error;
+      });
   };
 
   return (
@@ -39,6 +41,7 @@ function PornHub(): JSX.Element {
         <span className='ph-logo bg-black text-white'>Porn</span>
         <span className='ph-logo ph-logo-logo'>Hub</span>
       </div>
+      <div className='flex justify-center mb-24 text-white text-4xl font-bold'>Just For Fun</div>
       <div className='ph-preview'>
         <div className='ph-preview-box'>
           <div className='ph-view' ref={previewRef}>

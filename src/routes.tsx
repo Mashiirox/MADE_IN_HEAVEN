@@ -1,16 +1,19 @@
 import { Suspense, lazy } from 'react';
 import { Routes as RouterRoutes, Route } from 'react-router-dom';
 
-import Home from './pages/home';
+import PageLoading from '@c/page-loading';
+import Home from '@/pages/home';
 
-const PornHub = lazy(() => import('./pages/pornhub'));
+const PornHub = lazy(() => import('@/pages/pornhub'));
+const Minesweeper = lazy(() => import('@/pages/minesweeper'));
 
 function Routes(): JSX.Element {
   return (
-    <Suspense fallback={<div>加载中...</div>}>
+    <Suspense fallback={<PageLoading />}>
       <RouterRoutes>
         <Route path='/' element={<Home />} />
         <Route path='/pornhub' element={<PornHub />} />
+        <Route path='/minesweeper' element={<Minesweeper />} />
       </RouterRoutes>
     </Suspense>
   );
