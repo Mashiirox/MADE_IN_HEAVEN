@@ -28,7 +28,7 @@ function findSvgFile(dir: PathLike): string[] {
         .replace(svgTitle, (_$1, $2) => {
           let width = 0;
           let height = 0;
-          let content = $2.replace(clearHeightWidth, (_s1, s2, s3) => {
+          let content = $2.replace(clearHeightWidth, (_s1: unknown, s2: string, s3: number) => {
             if (s2 === 'width') {
               width = s3;
             } else if (s2 === 'height') {
