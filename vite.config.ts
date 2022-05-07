@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
+
 import react from '@vitejs/plugin-react';
-import * as path from 'path'; // 设置了 allowSyntheticDefaultImports 仍有报错提示，怎么回事呢
+import { svgBuilder } from './scripts/svg-to-sprite';
 
 function _resolve(dir: string) {
-  return path.resolve(__dirname, dir);
+  return resolve(__dirname, dir);
 }
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
@@ -15,5 +16,5 @@ export default defineConfig({
       '@c': _resolve('src/components'),
     },
   },
-  plugins: [react()],
+  plugins: [react(), svgBuilder('./src/assets/')],
 });

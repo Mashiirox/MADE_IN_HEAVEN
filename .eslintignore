@@ -3,3 +3,5 @@
 tailwind.config.js
 vite.config.ts
 postcss.config.js
+scripts/*
+dist/*
