@@ -5,7 +5,7 @@ function Home(): JSX.Element {
   return (
     <div className='bg-red'>
       <Link to='./pornhub'>Hello World</Link>
-      <Icon name='galaxy' color='red' />
+      <Icon name='camera' color='red' />
     </div>
   );
 }

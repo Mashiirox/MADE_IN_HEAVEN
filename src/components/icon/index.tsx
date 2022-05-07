@@ -1,32 +1,13 @@
-import React, { ForwardedRef } from 'react';
-import cs from 'classnames';
+import React, { ForwardedRef, SVGProps } from 'react';
 
-import svgHash from './svg-hash';
-
-export type iconColor =
-  | 'red'
-  | 'yellow'
-  | 'green'
-  | 'gray'
-  | 'blue'
-  | 'white'
-  | 'rose'
-  | 'pink'
-  | 'purple'
-  | 'orange'
-  | 'primary';
-
-export interface Props extends React.SVGProps<SVGSVGElement> {
+export interface IconProps extends SVGProps<SVGSVGElement> {
   name: string;
-  color?: iconColor;
+  color?: string;
   size?: number;
-  disabled?: boolean;
-  changeable?: boolean;
-  clickable?: boolean;
 }
 
 function Icon(
-  { name, size = 16, color, changeable, disabled, clickable, className, style, ...props }: Props,
+  { name, color, style, size = 16, ...props }: IconProps,
   ref?: ForwardedRef<SVGSVGElement>
 ): JSX.Element {
   const _style: React.CSSProperties = {
@@ -36,21 +17,10 @@ function Icon(
   };
 
   return (
-    <svg
-      {...props}
-      ref={ref}
-      data-name={name}
-      style={_style}
-      className={cs('svg-icon', className, {
-        'svg-icon--changeable': changeable,
-        'svg-icon--clickable': clickable,
-        'svg-icon--disabled': disabled,
-        [`svg-icon--${color}`]: color,
-      })}
-    >
-      <use xlinkHref={`${svgHash}#${name}`} />
+    <svg {...props} ref={ref} style={_style}>
+      <use href={`#${name}`} fill={color} />
     </svg>
   );
 }
 
-export default React.forwardRef<SVGSVGElement, Props>(Icon);
+export default React.forwardRef<SVGSVGElement, IconProps>(Icon);
