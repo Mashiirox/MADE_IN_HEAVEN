@@ -1,6 +1,6 @@
-import React, { ForwardedRef, SVGProps } from 'react';
+import { forwardRef, ForwardedRef, SVGProps, CSSProperties } from 'react';
 
-export interface IconProps extends SVGProps<SVGSVGElement> {
+interface IconProps extends SVGProps<SVGSVGElement> {
   name: string;
   color?: string;
   size?: number;
@@ -10,7 +10,7 @@ function Icon(
   { name, color, style, size = 16, ...props }: IconProps,
   ref?: ForwardedRef<SVGSVGElement>
 ): JSX.Element {
-  const _style: React.CSSProperties = {
+  const _style: CSSProperties = {
     ...style,
     width: `${size}px`,
     height: `${size}px`,
@@ -23,4 +23,4 @@ function Icon(
   );
 }
 
-export default React.forwardRef<SVGSVGElement, IconProps>(Icon);
+export default forwardRef<SVGSVGElement, IconProps>(Icon);

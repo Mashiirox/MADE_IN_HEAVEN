@@ -16,7 +16,6 @@ export default defineConfig({
       '@': _resolve('src'),
       '@a': _resolve('src/assets'),
       '@c': _resolve('src/components'),
-      './runtimeConfig': './runtimeConfig.browser',
     },
   },
   plugins: [
