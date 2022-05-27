@@ -1,95 +1,104 @@
-$w: 96px;
-$h: 112px;
-$xspace: calc($w/2);
-$yspace: calc($h/4) - 1;
-$speed: 1.5s;
+@font-face {
+  font-family: 'Roboto_300';
+  src: url('@/assets/font/roboto_300.woff2');
+}
 
-.tetrominos {
+@font-face {
+  font-family: 'Roboto_700';
+  src: url('@/assets/font/roboto_700.woff2');
+}
+
+.windows_xp {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-$h, -$w);
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+
+  &-container {
+    width: 150px;
+    height: 18px;
+    border: 2px solid #b2b2b2;
+    border-radius: 7px;
+    margin: 0 auto;
+    padding: 2px 1px;
+    overflow: hidden;
+    font-size: 0;
+  }
+
+  &-box {
+    width: 9px;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      #2838c7 0%,
+      #5979ef 17%,
+      #869ef3 32%,
+      #869ef3 45%,
+      #5979ef 59%,
+      #2838c7 100%
+    );
+    display: inline-block;
+    margin-right: 2px;
+    animation: loader 2s infinite;
+    animation-timing-function: linear;
+  }
+
+  &-logo {
+    width: 220px;
+    margin: 50px auto;
+  }
+
+  &-logo p {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-top {
+    font-family: roboto_300;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+  }
+
+  &-top:after {
+    content: '\00a9';
+    font-size: 10px;
+    position: relative;
+    top: -5px;
+    margin-left: 2px;
+  }
+
+  &-mid {
+    font-family: roboto_700;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  &-mid span {
+    font-size: 22px;
+    display: inline-block;
+    vertical-align: top;
+    color: #ff6821;
+    margin-top: -8px;
+  }
+
+  &-logo &-bottom {
+    font-family: roboto_300;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-left: 5px;
+  }
 }
 
-.tetromino {
-  width: $w;
-  height: $h;
-  position: absolute;
-  transition: all ease 0.3s;
-  background: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 684"%3E%3Cpath fill="%23010101" d="M305.7 0L0 170.9v342.3L305.7 684 612 513.2V170.9L305.7 0z"/%3E%3Cpath fill="%23fff" d="M305.7 80.1l-233.6 131 233.6 131 234.2-131-234.2-131"/%3E%3C/svg%3E')
-    no-repeat top center;
-}
-
-.box1 {
-  animation: tetromino1 $speed ease-out infinite;
-}
-.box2 {
-  animation: tetromino2 $speed ease-out infinite;
-}
-.box3 {
-  animation: tetromino3 $speed ease-out infinite;
-  z-index: 2;
-}
-.box4 {
-  animation: tetromino4 $speed ease-out infinite;
-}
-
-@keyframes tetromino1 {
-  0%,
-  40% {
-    /* compose logo */ /* 1 on 3 */ /* L-shape */
-    transform: translate(0, 0);
-  }
-  50% {
-    /* pre-box */
-    transform: translate($xspace, -$yspace);
-  }
-  60%,
-  100% {
-    /* box */ /* compose logo */
-    transform: translate($xspace * 2, 0);
-  }
-}
-
-@keyframes tetromino2 {
-  0%,
-  20% {
-    /* compose logo */ /* 1 on 3 */
-    transform: translate($xspace * 2, 0px);
-  }
-  40%,
-  100% {
-    /* L-shape */ /* box */ /* compose logo */
-    transform: translate($xspace * 3, $yspace);
-  }
-}
-
-@keyframes tetromino3 {
+@keyframes loader {
   0% {
-    /* compose logo */
-    transform: translate($xspace * 3, $yspace);
+    transform: translate(-30px);
   }
-  20%,
-  60% {
-    /* 1 on 3 */ /* L-shape */ /* box */
-    transform: translate($xspace * 2, $yspace * 2);
-  }
-  90%,
   100% {
-    /* compose logo */
-    transform: translate($xspace, $yspace);
-  }
-}
-
-@keyframes tetromino4 {
-  0%,
-  60% {
-    /* compose logo */ /* 1 on 3 */ /* L-shape */ /* box */
-    transform: translate($xspace, $yspace);
-  }
-  90%,
-  100% {
-    /* compose logo */
-    transform: translate(0, 0);
+    transform: translate(150px);
   }
 }

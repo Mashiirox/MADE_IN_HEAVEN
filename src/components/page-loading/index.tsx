@@ -1,17 +1,21 @@
-import AbsoluteCentered from '@c/absolute-centered';
-
 import './index.scss';
 
 function PageLoading(): JSX.Element {
   return (
-    <AbsoluteCentered>
-      <div className='tetrominos'>
-        <div className='tetromino box1' />
-        <div className='tetromino box2' />
-        <div className='tetromino box3' />
-        <div className='tetromino box4' />
+    <div className='windows_xp'>
+      <div className='windows_xp-logo'>
+        <p className='windows_xp-top'>Microsoft</p>
+        <p className='windows_xp-mid'>
+          Windows<span>XP</span>
+        </p>
+        <p className='windows_xp-bottom'>Professional</p>
       </div>
-    </AbsoluteCentered>
+      <div className='windows_xp-container'>
+        <div className='windows_xp-box' />
+        <div className='windows_xp-box' />
+        <div className='windows_xp-box' />
+      </div>
+    </div>
   );
 }
 
