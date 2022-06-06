@@ -1,0 +1,9 @@
+.application {
+  @apply bg-black text-white flex;
+
+  height: 100vh;
+}
+
+.page {
+  @apply bg-red-200 h-full flex-1 relative pl-32;
+}

@@ -31,6 +31,11 @@ export const queryIssues = async ({
   return githubQuery(api);
 };
 
+export const queryIssue = async (number: string): Promise<Issue> => {
+  const api = `${blog}/issues/${number}?state=open`;
+  return githubQuery(api);
+};
+
 export const queryCloud = async (): Promise<Cloud> => {
   try {
     const response = await fetch(CLOUD_API);
