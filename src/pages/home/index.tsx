@@ -1,9 +1,9 @@
-import PageLoading from '@/components/page-loading';
+import Loading from '@c/loading';
 
 function Home(): JSX.Element {
   return (
     <div>
-      <PageLoading />
+      <Loading />
     </div>
   );
 }

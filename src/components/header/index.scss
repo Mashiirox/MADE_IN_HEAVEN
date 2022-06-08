@@ -1,0 +1,12 @@
+.header {
+  @apply fixed w-full bg-white flex z-10 p-1 lg:px-16 lg:py-8;
+
+  border-bottom: 4px solid #d3d3d3;
+  font-family: pixel-en;
+
+  &-name {
+    @apply text-2xl lg:text-3xl flex items-center ml-3 font-bold;
+
+    font-family: pixel-en;
+  }
+}

@@ -1,9 +1,18 @@
-.application {
-  @apply bg-black text-white flex;
+@font-face {
+  font-family: 'pixel';
+  src: url('@a/font/pixel.woff2');
+}
 
+@font-face {
+  font-family: 'pixel-en';
+  src: url('@a/font/pixel-en.woff2');
+}
+
+.application {
   height: 100vh;
+  font-family: pixel;
 }
 
 .page {
-  @apply bg-red-200 h-full flex-1 relative pl-32;
+  @apply h-full pt-36;
 }
