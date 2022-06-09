@@ -25,7 +25,7 @@ function Header(): JSX.Element {
             MASHIIROX
           </div>
           <div
-            className={cs('flex justify-center items-center mt-1 text-xs lg:text-base', {
+            className={cs('flex justify-center items-center mt-1 text-xs md:text-base', {
               hidden: !isActive,
             })}
           >

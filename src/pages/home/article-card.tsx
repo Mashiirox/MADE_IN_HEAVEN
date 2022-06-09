@@ -9,6 +9,7 @@ import { formatIssue } from '@/utils/format';
 import { queryArchive } from '@/utils/service';
 
 import './index.scss';
+import Loading from '@/components/loading';
 
 function ArticleCard(): JSX.Element {
   const [issues, setIssues] = useState<Array<Issue>>([]);
@@ -58,18 +59,23 @@ function ArticleCard(): JSX.Element {
           Post
         </div>
       </div>
-      <div className='article-list'>
-        <Article
-          title='正则表达式'
-          description='昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风'
-          time='1周前'
-        />
-        <Article
-          title='正则表达式'
-          description='昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风昨夜星辰昨夜风'
-          time='上个月'
-        />
-      </div>
+      {!issues.length ? (
+        <div className='w-full flex justify-center mt-24 md:mt-36'>
+          <Loading />
+        </div>
+      ) : (
+        <div className='article-list'>
+          {issues.map(({ title, description, created_at, number }) => (
+            <Article
+              title={title}
+              description={description}
+              time={created_at}
+              key={number}
+              num={number}
+            />
+          ))}
+        </div>
+      )}
     </>
   );
 }

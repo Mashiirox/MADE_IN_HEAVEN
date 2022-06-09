@@ -1,16 +1,26 @@
+import { useNavigate } from 'react-router-dom';
+
 import './index.scss';
 
 type ArticleProps = {
   title: string;
   description: string;
   time: string;
+  num: number;
 };
 
-function Article({ title, description, time }: ArticleProps): JSX.Element {
+function Article({ title, description, time, num }: ArticleProps): JSX.Element {
+  const navigate = useNavigate();
+
+  const handleClick = (): void => {
+    navigate(`/post/${num}`);
+  };
+
   return (
     <div
       className='is-centered is-rounded nes-container with-title nes-pointer font-bold article-card'
       data-aos='fade-up'
+      onClick={handleClick}
     >
       <p className='title article-title'>{title}</p>
       <p>{description}</p>
