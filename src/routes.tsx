@@ -1,16 +1,14 @@
-import { Suspense } from 'react';
 import { Routes as RouterRoutes, Route } from 'react-router-dom';
 
-import PageLoading from '@c/page-loading';
 import Home from '@/pages/home';
+import Post from '@/pages/post';
 
 function Routes(): JSX.Element {
   return (
-    <Suspense fallback={<PageLoading />}>
-      <RouterRoutes>
-        <Route path='/' element={<Home />} />
-      </RouterRoutes>
-    </Suspense>
+    <RouterRoutes>
+      <Route path='/' element={<Home />} />
+      <Route path='/post/:id' element={<Post />} />
+    </RouterRoutes>
   );
 }
 

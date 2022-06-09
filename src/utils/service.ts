@@ -1,7 +1,6 @@
 const token = ['ghp_wP8QaPA2Bz4BVpF2', 'TKYfymZwo8eeIw4L98L2'];
 const access_token = `token ${token.join('')}`;
 const blog = 'https://api.github.com/repos/Mashiirox/demon';
-const CLOUD_API = 'https://service-05sqjlii-1306208233.gz.apigw.tencentcs.com/cloud';
 const poems = 'https://v2.jinrishici.com/one.json';
 
 const githubQuery = async <T>(api: string): Promise<T> => {
@@ -36,20 +35,8 @@ export const queryIssue = async (number: string): Promise<Issue> => {
   return githubQuery(api);
 };
 
-export const queryCloud = async (): Promise<Cloud> => {
-  try {
-    const response = await fetch(CLOUD_API);
-    if (response.ok) {
-      const data = (await response.json()) as Cloud;
-      return data;
-    } else {
-      const error = new Error(response.statusText);
-      return Promise.reject(error);
-    }
-  } catch (error) {
-    return Promise.reject(error);
-  }
-};
+export const queryArchive = async (page = 1): Promise<Array<Issue>> =>
+  queryIssues({ page, state: 'open' });
 
 export const queryPoems = async (): Promise<Poems> => {
   try {

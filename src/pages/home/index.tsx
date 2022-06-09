@@ -1,9 +1,11 @@
-import Loading from '@c/loading';
+import Description from './description';
+import ArticleCard from './article-card';
 
 function Home(): JSX.Element {
   return (
     <div>
-      <Loading />
+      <Description />
+      <ArticleCard />
     </div>
   );
 }
