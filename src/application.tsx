@@ -2,14 +2,12 @@ import Header from '@c/header';
 import ScrollUp from '@c/scroll-up';
 import Routes from './routes';
 
-import './application.scss';
-
 function App(): JSX.Element {
   return (
-    <div className='application'>
+    <div className='text-pixel h-screen'>
       <Header />
       <ScrollUp />
-      <div className='page'>
+      <div className='pt-36 max-w-4xl px-8 my-0 mx-auto h-full'>
         <Routes />
       </div>
     </div>

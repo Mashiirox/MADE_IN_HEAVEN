@@ -54,7 +54,7 @@ function ArticleCard(): JSX.Element {
   return (
     <>
       <div className='mb-8'>
-        <div className='text-pixel-en font-bold text-2xl'>
+        <div className='text-pixel-en font-bold text-xl md:text-2xl'>
           <span className='mr-4 text-blue-500'>#</span>
           Post
         </div>

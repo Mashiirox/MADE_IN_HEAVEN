@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'pixel';
+  src: url('@a/font/pixel.woff2');
+}
+
+@font-face {
+  font-family: 'pixel-en';
+  src: url('@a/font/pixel-en.woff2');
+}
+
+.text-pixel {
+  font-family: pixel;
+}
+
+.text-pixel-en {
+  font-family: pixel-en;
+}

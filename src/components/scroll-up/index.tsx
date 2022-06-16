@@ -1,7 +1,4 @@
 import { useWindowScroll } from 'react-use';
-import cs from 'classnames';
-
-import './index.scss';
 
 function ScrollUp(): JSX.Element {
   const { y } = useWindowScroll();
@@ -13,10 +10,12 @@ function ScrollUp(): JSX.Element {
   return (
     <button
       type='button'
-      className={cs('back-to-top nes-btn is-error', { 'bottom-6': y > 100 })}
+      className={`text-pixel-en fixed right-8  z-10 shadow-2xl transition-all duration-300 nes-btn is-error ${
+        y > 100 ? 'bottom-6' : '-bottom-16'
+      }`}
       onClick={handleScrollUp}
     >
-      <div>&gt;</div>
+      <div className='-rotate-90'>&gt;</div>
     </button>
   );
 }

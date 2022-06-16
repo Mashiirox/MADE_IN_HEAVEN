@@ -4,8 +4,6 @@ import cs from 'classnames';
 
 import Mario from '@c/mario';
 
-import './index.scss';
-
 function Header(): JSX.Element {
   const navigate = useNavigate();
   const { y } = useWindowScroll();
@@ -17,11 +15,19 @@ function Header(): JSX.Element {
   };
 
   return (
-    <div className={cs('header transition-all', { 'py-4': isActive })}>
+    <div
+      className={cs(
+        'text-pixel-en fixed w-full bg-white flex z-10 p-1 md:px-16 transition-all justify-between items-center border-b-4 border-solid border-b-gray-300',
+        { 'py-4': isActive }
+      )}
+    >
       <div className='flex items-center'>
         <Mario isActive={isActive} />
         <div className='flex flex-col ml-3'>
-          <div className='header-name' onClick={handleClick}>
+          <div
+            className='text-pixel-en text-2xl md:text-3xl flex items-center font-bold'
+            onClick={handleClick}
+          >
             MASHIIROX
           </div>
           <div

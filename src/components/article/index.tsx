@@ -18,7 +18,7 @@ function Article({ title, description, time, num }: ArticleProps): JSX.Element {
 
   return (
     <div
-      className='is-centered is-rounded nes-container with-title nes-pointer font-bold article-card'
+      className='article-card is-centered is-rounded nes-container with-title nes-pointer font-bold'
       data-aos='fade-up'
       onClick={handleClick}
     >
