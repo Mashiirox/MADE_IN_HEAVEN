@@ -4,10 +4,10 @@ import Routes from './routes';
 
 function App(): JSX.Element {
   return (
-    <div className='text-pixel h-screen'>
+    <div className='text-pixel'>
       <Header />
       <ScrollUp />
-      <div className='pt-36 max-w-4xl px-8 my-0 mx-auto h-full'>
+      <div className='pt-36 pb-12 max-w-4xl px-8 my-0 mx-auto'>
         <Routes />
       </div>
     </div>

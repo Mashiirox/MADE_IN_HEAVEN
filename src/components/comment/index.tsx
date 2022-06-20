@@ -1,12 +1,11 @@
 import GitalkComponent from 'gitalk/dist/gitalk-component';
-
 import 'gitalk/dist/gitalk.css';
 
-interface CommentProps {
-  title: string;
-}
+import './index.scss';
 
-function Comment({ title }: CommentProps): JSX.Element {
+type CommentProps = { id: string };
+
+function Comment({ id }: CommentProps): JSX.Element {
   return (
     <GitalkComponent
       options={{
@@ -15,8 +14,8 @@ function Comment({ title }: CommentProps): JSX.Element {
         repo: 'gitalk_comment',
         owner: 'Mashiirox',
         admin: ['Mashiirox'],
+        id: `code:${id}`,
         distractionFreeMode: false,
-        title,
       }}
     />
   );
