@@ -16,13 +16,13 @@ function ArticleCard(): JSX.Element {
   const [page] = useState(1);
   const loadingRef = useRef(false);
   const finishedRef = useRef(false);
-  const loading = useLoading();
+  const delay = useLoading();
 
   const fetchArticles = (): void => {
     queryArchive(page)
       .then(async (data) => {
         if (page === 1) {
-          await loading();
+          await delay();
         }
 
         if (data.length) {
@@ -60,9 +60,7 @@ function ArticleCard(): JSX.Element {
         </div>
       </div>
       {!issues.length ? (
-        <div className='w-full flex justify-center mt-24 md:mt-36'>
-          <Loading />
-        </div>
+        <Loading className='w-full flex justify-center mt-24 md:mt-36' />
       ) : (
         <div className='article-list'>
           {issues.map(({ title, description, created_at, number }) => (

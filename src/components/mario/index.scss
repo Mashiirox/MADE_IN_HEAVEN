@@ -1,13 +1,11 @@
-:root {
+.mario {
   --size: 48px;
   --pixel: calc(var(--size) / 16);
 
   --c-1: #f81c2f;
   --c-2: #ffbb8e;
   --c-3: #8c6e22;
-}
 
-.mario {
   position: absolute;
   width: var(--size);
   height: var(--size);

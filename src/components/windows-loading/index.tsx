@@ -1,6 +1,6 @@
 import './index.scss';
 
-function PageLoading(): JSX.Element {
+function WindowsLoading(): JSX.Element {
   return (
     <div className='windows_xp'>
       <div className='windows_xp-logo'>
@@ -19,4 +19,4 @@ function PageLoading(): JSX.Element {
   );
 }
 
-export default PageLoading;
+export default WindowsLoading;
