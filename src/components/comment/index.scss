@@ -82,6 +82,7 @@
   background-color: #fff;
 }
 
+.gt-container > .gt-comments > .gt-comments-controls > .gt-btn,
 .gt-container > .gt-no-init > .gt-btn,
 .gt-header-controls > .gt-btn {
   border-image-slice: 2;
@@ -122,6 +123,7 @@
     }
   }
 
+  &.gt-btn-loadmore,
   &.gt-btn-login,
   &.gt-btn-public {
     color: #fff;
