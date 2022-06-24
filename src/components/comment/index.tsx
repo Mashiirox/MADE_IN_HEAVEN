@@ -11,7 +11,7 @@ function Comment({ id }: CommentProps): JSX.Element {
       options={{
         clientID: '7134ff1c7af78c3f7bdf',
         clientSecret: 'd2c54280daadca07020d03754b6a6d7aa7f744c2',
-        repo: 'gitalk_comment',
+        repo: 'MADE_IN_HEAVEN',
         owner: 'Mashiirox',
         admin: ['Mashiirox'],
         id: `code:${id}`,

@@ -1,6 +1,6 @@
 const token = ['ghp_wP8QaPA2Bz4BVpF2', 'TKYfymZwo8eeIw4L98L2'];
 const access_token = `token ${token.join('')}`;
-const blog = 'https://api.github.com/repos/Mashiirox/demon';
+const blog = 'https://api.github.com/repos/Mashiirox/MADE_IN_HEAVEN';
 const poems = 'https://v2.jinrishici.com/one.json';
 
 const githubQuery = async <T>(api: string): Promise<T> => {
